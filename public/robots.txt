@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://stalflow.com.br/sitemap.xml
