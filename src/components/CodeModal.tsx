@@ -59,13 +59,19 @@ const CodeModal: React.FC<CodeModalProps> = ({ isOpen, onClose }) => {
                                     <div className="flex items-center gap-2">
                                         <span className="text-[#79c0ff]">link:</span>
                                         <a
-                                            href="https://stalflowgs.com.br"
+                                            href="https://app.stalflowgs.com.br"
                                             target="_blank"
                                             rel="noopener noreferrer"
                                             className="text-[#a5d6ff] underline decoration-transparent group-hover:decoration-[#a5d6ff] transition-all"
                                         >
-                                            "https://stalflowgs.com.br"
-                                        </a>
+                                            "https://app.stalflowgs.com.br"
+                                        </a>,
+                                    </div>
+                                    <div className="flex gap-2">
+                                        <span className="text-[#79c0ff] whitespace-nowrap">description:</span>
+                                        <span className="text-[#a5d6ff] max-w-md">
+                                            "É basicamente uma plataforma de gestão financeira e de assinaturas online que facilita acompanhar pagamentos, clientes e planos de serviço — ideal para quem vende assinaturas ou serviços contínuos."
+                                        </span>
                                     </div>
                                 </div>
                                 <span className="text-[#ff7b72]">{'}'}</span>,
