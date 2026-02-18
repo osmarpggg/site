@@ -1,49 +1,6 @@
-import React from 'react';
-import { Layout, Smartphone, Globe, Code, Cpu, Rocket, ShieldCheck, Cloud } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-
-const services = [
-    {
-        icon: <Globe className="w-8 h-8" />,
-        title: "Sites Profissionais",
-        description: "Interfaces imersivas e performáticas que convertem visitantes em clientes."
-    },
-    {
-        icon: <Layout className="w-8 h-8" />,
-        title: "WebApps Escaláveis",
-        description: "Aplicações web robustas como SaaS e dashboards administrativos."
-    },
-    {
-        icon: <Smartphone className="w-8 h-8" />,
-        title: "Mobile Apps",
-        description: "Desenvolvimento nativo e híbrido (iOS/Android) com UX premium."
-    },
-    {
-        icon: <Code className="w-8 h-8" />,
-        title: "Sistemas Sob Medida",
-        description: "Software desenhado especificamente para as regras do seu negócio."
-    },
-    {
-        icon: <Cpu className="w-8 h-8" />,
-        title: "Automação e IA",
-        description: "Integrações inteligentes para otimizar fluxos de trabalho."
-    },
-    {
-        icon: <Rocket className="w-8 h-8" />,
-        title: "MVPs para Startups",
-        description: "Lançamento rápido de produtos viáveis para validação de mercado e crescimento."
-    },
-    {
-        icon: <ShieldCheck className="w-8 h-8" />,
-        title: "Auditoria e Cibersegurança",
-        description: "Testes de intrusão, blindagem de código e conformidade com OWASP."
-    },
-    {
-        icon: <Cloud className="w-8 h-8" />,
-        title: "Infraestrutura Cloud",
-        description: "Arquiteturas escaláveis e DevOps para garantir alta disponibilidade."
-    }
-];
+import { servicesData } from '../data/services';
 
 const Services = () => {
     return (
@@ -59,23 +16,27 @@ const Services = () => {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {services.map((service, index) => (
-                        <motion.div
-                            key={index}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true, margin: "-50px" }}
-                            transition={{ duration: 0.5, delay: index * 0.1 }}
-                            className="group p-8 border border-white/5 bg-white/5 hover:bg-white/10 transition-colors rounded-xl backdrop-blur-sm"
-                        >
-                            <div className="mb-6 p-4 bg-background rounded-lg w-fit text-primary group-hover:scale-110 group-hover:text-secondary transition-all duration-300 border border-white/5 shadow-lg shadow-black/50">
-                                {service.icon}
-                            </div>
-                            <h3 className="text-xl font-bold mb-3 font-tech">{service.title}</h3>
-                            <p className="text-gray-400 leading-relaxed text-sm">
-                                {service.description}
-                            </p>
-                        </motion.div>
+                    {servicesData.map((service, index) => (
+                        <Link key={index} to={`/servicos/${service.slug}`}>
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true, margin: "-50px" }}
+                                transition={{ duration: 0.5, delay: index * 0.1 }}
+                                className="group h-full p-8 border border-white/5 bg-white/5 hover:bg-white/10 transition-all duration-300 rounded-xl backdrop-blur-sm cursor-pointer hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/10"
+                            >
+                                <div className="mb-6 p-4 bg-background rounded-lg w-fit text-primary group-hover:scale-110 group-hover:text-secondary transition-all duration-300 border border-white/5 shadow-lg shadow-black/50">
+                                    {service.icon}
+                                </div>
+                                <h3 className="text-xl font-bold mb-3 font-tech group-hover:text-primary transition-colors">{service.title}</h3>
+                                <p className="text-gray-400 leading-relaxed text-sm group-hover:text-gray-300 transition-colors">
+                                    {service.shortDescription}
+                                </p>
+                                <div className="mt-6 flex items-center text-sm text-primary font-medium opacity-0 group-hover:opacity-100 transition-opacity -translate-x-4 group-hover:translate-x-0 duration-300">
+                                    Saiba mais →
+                                </div>
+                            </motion.div>
+                        </Link>
                     ))}
                 </div>
             </div>

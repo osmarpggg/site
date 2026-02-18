@@ -1,5 +1,6 @@
 import React from 'react';
 import { Code2, Instagram } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
@@ -30,8 +31,8 @@ const Footer = () => {
                         &copy; 2026 StalFlow BRASIL. Todos os direitos reservados.
                     </div>
                     <div className="flex gap-6 mt-4 md:mt-0 text-sm text-gray-600">
-                        <a href="#" className="hover:text-gray-400 transition-colors">Política de Privacidade</a>
-                        <a href="#" className="hover:text-gray-400 transition-colors">Termos de Uso</a>
+                        <Link to="/politica-de-privacidade" className="hover:text-gray-400 transition-colors">Política de Privacidade</Link>
+                        <Link to="/termos-de-uso" className="hover:text-gray-400 transition-colors">Termos de Uso</Link>
                     </div>
                 </div>
             </div>

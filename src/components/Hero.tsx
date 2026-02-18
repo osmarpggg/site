@@ -3,6 +3,8 @@ import { motion } from 'framer-motion';
 import { ArrowRight, Terminal } from 'lucide-react';
 import CodeModal from './CodeModal';
 
+import Button from './Button';
+
 const Hero = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -56,22 +58,23 @@ const Hero = () => {
                         transition={{ duration: 0.6, delay: 0.6 }}
                         className="flex flex-col sm:flex-row gap-4"
                     >
-                        <a
+                        <Button
                             href="https://wa.me/5542988186315"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="group px-8 py-4 bg-primary hover:bg-primary/90 text-white font-semibold rounded flex items-center justify-center gap-2 transition-all"
+                            external
+                            variant="primary"
+                            size="lg"
+                            icon={<ArrowRight className="w-4 h-4" />}
                         >
                             Iniciar Projeto
-                            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                        </a>
-                        <button
+                        </Button>
+                        <Button
                             onClick={() => setIsModalOpen(true)}
-                            className="px-8 py-4 border border-white/20 hover:bg-white/5 text-white font-semibold rounded flex items-center justify-center gap-2 transition-all"
+                            variant="outline"
+                            size="lg"
+                            icon={<Terminal className="w-4 h-4" />}
                         >
-                            <Terminal className="w-4 h-4 text-gray-400" />
                             Ver Portfolio em Código
-                        </button>
+                        </Button>
                     </motion.div>
                 </div>
             </div>

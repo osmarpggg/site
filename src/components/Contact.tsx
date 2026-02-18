@@ -1,5 +1,6 @@
 import React from 'react';
-import { MessageSquare, ArrowRight } from 'lucide-react';
+import { MessageSquare } from 'lucide-react';
+import Button from './Button';
 
 const Contact = () => {
     return (
@@ -19,17 +20,15 @@ const Contact = () => {
                     </p>
 
                     <div className="flex flex-col md:flex-row items-center justify-center gap-6">
-
-
-                        <a
+                        <Button
                             href="https://wa.me/5542988186315"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="w-full md:w-auto px-8 py-4 border border-white/20 hover:bg-white/5 text-white font-bold rounded transition-colors flex items-center justify-center gap-3 backdrop-blur-sm"
+                            external
+                            variant="primary" // Changed to primary for better visibility in this context
+                            size="lg"
+                            icon={<MessageSquare className="w-5 h-5" />}
                         >
-                            <MessageSquare className="w-5 h-5" />
                             WhatsApp Comercial
-                        </a>
+                        </Button>
                     </div>
                 </div>
             </div>

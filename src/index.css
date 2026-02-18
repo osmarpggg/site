@@ -11,6 +11,17 @@
 
   body {
     @apply bg-background text-white font-sans antialiased overflow-x-hidden;
+    cursor: none;
+  }
+
+  a,
+  button,
+  [role="button"],
+  input,
+  label,
+  select,
+  textarea {
+    cursor: none;
   }
 
   /* Custom Scrollbar for Webkit */
