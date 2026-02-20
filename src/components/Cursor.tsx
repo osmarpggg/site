@@ -86,14 +86,14 @@ const Cursor = () => {
         <>
             {/* Main Dot */}
             <motion.div
-                className="fixed top-0 left-0 w-2 h-2 bg-primary rounded-full pointer-events-none z-[9999]"
+                className="fixed top-0 left-0 w-2 h-2 bg-primary rounded-full pointer-events-none z-[999999]"
                 variants={dotVariants}
                 animate={isHovering ? "hover" : "default"}
                 transition={{ type: "tween", ease: "backOut", duration: 0.1 }}
             />
             {/* Trailing Ring */}
             <motion.div
-                className="fixed top-0 left-0 rounded-full pointer-events-none z-[9998]"
+                className="fixed top-0 left-0 rounded-full pointer-events-none z-[999998]"
                 variants={variants}
                 animate={isHovering ? "hover" : "default"}
                 transition={{
