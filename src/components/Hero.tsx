@@ -2,10 +2,13 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Terminal } from 'lucide-react';
 import CodeModal from './CodeModal';
-
 import Button from './Button';
 
-const Hero = () => {
+interface HeroProps {
+    onOpenCyberForm: () => void;
+}
+
+const Hero: React.FC<HeroProps> = ({ onOpenCyberForm }) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     return (
@@ -59,8 +62,7 @@ const Hero = () => {
                         className="flex flex-col sm:flex-row gap-4"
                     >
                         <Button
-                            href="https://wa.me/5542988186315"
-                            external
+                            onClick={onOpenCyberForm}
                             variant="primary"
                             size="lg"
                             icon={<ArrowRight className="w-4 h-4" />}

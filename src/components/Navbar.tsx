@@ -3,21 +3,23 @@ import { Menu, X, Code2, Play } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Button from './Button';
 
-const Navbar = () => {
+interface NavbarProps {
+    onOpenCyberForm: () => void;
+}
+
+const Navbar: React.FC<NavbarProps> = ({ onOpenCyberForm }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
 
     useEffect(() => {
-        const handleScroll = () => {
-            setScrolled(window.scrollY > 20);
-        };
+        const handleScroll = () => { setScrolled(window.scrollY > 20); };
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
     const navLinks = [
         { name: 'Serviços', href: '#services' },
-        { name: 'Visão', href: '#vision' }, // Updated link
+        { name: 'Visão', href: '#vision' },
         { name: 'Diferenciais', href: '#features' },
         { name: 'Contato', href: '#contact' },
     ];
@@ -54,8 +56,7 @@ const Navbar = () => {
                         </a>
                     ))}
                     <Button
-                        href="https://wa.me/5542988186315"
-                        external
+                        onClick={onOpenCyberForm}
                         size="sm"
                         variant="primary"
                         icon={<Play className="w-3 h-3 fill-current" />}
@@ -95,8 +96,7 @@ const Navbar = () => {
                             ))}
                             <div className="mt-4">
                                 <Button
-                                    href="https://wa.me/5542988186315"
-                                    external
+                                    onClick={() => { onOpenCyberForm(); setIsOpen(false); }}
                                     className="w-full justify-center"
                                 >
                                     Iniciar Projeto

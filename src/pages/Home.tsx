@@ -5,10 +5,13 @@ import About from '../components/About';
 import Vision from '../components/Vision';
 import Features from '../components/Features';
 import Contact from '../components/Contact';
-
 import Seo from '../components/Seo';
 
-const Home = () => {
+interface HomeProps {
+    onOpenCyberForm: () => void;
+}
+
+const Home: React.FC<HomeProps> = ({ onOpenCyberForm }) => {
     return (
         <main>
             <Seo
@@ -22,12 +25,12 @@ const Home = () => {
                     "logo": "https://stalflow.com.br/logo.png",
                     "contactPoint": {
                         "@type": "ContactPoint",
-                        "telephone": "+55-48-99999-9999",
+                        "telephone": "+55-42-98818-6315",
                         "contactType": "customer service"
                     }
                 }}
             />
-            <Hero />
+            <Hero onOpenCyberForm={onOpenCyberForm} />
             <Services />
             <About />
             <Vision />
