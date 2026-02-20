@@ -109,7 +109,7 @@ const questionVariants = {
 const CyberForm: React.FC<CyberFormProps> = ({ isOpen, onClose }) => {
     const [state, dispatch] = useReducer(reducer, initialState);
     const inputRef = useRef<HTMLInputElement | HTMLSelectElement | null>(null);
-    const bootTimerRef = useRef<NodeJS.Timeout | null>(null);
+    const bootTimerRef = useRef<ReturnType<typeof setInterval> | null>(null);
     const logDisplayCount = Math.min(Math.floor((state.bootProgress / 100) * BOOT_LOGS.length) + 1, BOOT_LOGS.length);
 
     // Boot progress animation
