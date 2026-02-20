@@ -41,22 +41,22 @@ const QUESTIONS: {
     type: 'text' | 'select';
     options?: string[];
 }[] = [
-    { id: 'projectName', label: '> IDENTIFICANDO MISSÃO: Como você chama seu projeto?', placeholder: 'Ex: AppVentura, SistemaCore...', type: 'text' },
-    { id: 'name', label: '> AGENTE CONECTADO: Qual o seu nome?', placeholder: 'Ex: Victor Silva', type: 'text' },
-    { id: 'contact', label: '> CANAL DE COMUNICAÇÃO: Email ou WhatsApp para contato?', placeholder: 'email@exemplo.com ou (42) 99999-9999', type: 'text' },
-    {
-        id: 'scope', label: '> ANALISANDO ESCOPO: O que será desenvolvido?', placeholder: '', type: 'select',
-        options: ['Site Institucional', 'Aplicativo Mobile', 'Sistema Web / SaaS', 'Integração com IA', 'E-commerce', 'Consultoria Técnica']
-    },
-    {
-        id: 'deadline', label: '> CALIBRANDO PRAZO: Qual o horizonte de entrega?', placeholder: '', type: 'select',
-        options: ['Até 30 dias', 'Até 60 dias', 'Até 90 dias', '3 a 6 meses', 'Flexível']
-    },
-    {
-        id: 'budget', label: '> ALOCANDO RECURSOS: Qual a faixa de investimento?', placeholder: '', type: 'select',
-        options: ['Até R$ 3.000', 'R$ 3.000 – R$ 8.000', 'R$ 8.000 – R$ 20.000', 'R$ 20.000 – R$ 50.000', 'Acima de R$ 50.000', 'A definir']
-    },
-];
+        { id: 'projectName', label: '> IDENTIFICANDO MISSÃO: Como você chama seu projeto?', placeholder: 'Ex: AppVentura, SistemaCore...', type: 'text' },
+        { id: 'name', label: '> AGENTE CONECTADO: Qual o seu nome?', placeholder: 'Ex: Victor Silva', type: 'text' },
+        { id: 'contact', label: '> CANAL DE COMUNICAÇÃO: Email ou WhatsApp para contato?', placeholder: 'email@exemplo.com ou (42) 99999-9999', type: 'text' },
+        {
+            id: 'scope', label: '> ANALISANDO ESCOPO: O que será desenvolvido?', placeholder: '', type: 'select',
+            options: ['Site Institucional', 'Aplicativo Mobile', 'Sistema Web / SaaS', 'Integração com IA', 'E-commerce', 'Consultoria Técnica']
+        },
+        {
+            id: 'deadline', label: '> CALIBRANDO PRAZO: Qual o horizonte de entrega?', placeholder: '', type: 'select',
+            options: ['Até 30 dias', 'Até 60 dias', 'Até 90 dias', '3 a 6 meses', 'Flexível']
+        },
+        {
+            id: 'budget', label: '> ALOCANDO RECURSOS: Qual a faixa de investimento?', placeholder: '', type: 'select',
+            options: ['Até R$ 3.000', 'R$ 3.000 – R$ 8.000', 'R$ 8.000 – R$ 20.000', 'R$ 20.000 – R$ 50.000', 'Acima de R$ 50.000', 'A definir']
+        },
+    ];
 
 // ─── Reducer ────────────────────────────────────────────────────────────────
 const initialState: State = {
@@ -215,7 +215,7 @@ const CyberForm: React.FC<CyberFormProps> = ({ isOpen, onClose }) => {
                         animate={{ opacity: 1, scale: 1, y: 0 }}
                         exit={{ opacity: 0, scale: 0.92 }}
                         transition={{ type: 'spring', stiffness: 280, damping: 26 }}
-                        className="relative w-full max-w-2xl min-h-[520px] rounded-2xl overflow-hidden flex flex-col"
+                        className="relative z-10 w-full max-w-2xl min-h-[520px] rounded-2xl overflow-hidden flex flex-col"
                         style={{ background: 'linear-gradient(135deg, #1a0533 0%, #050510 50%, #0a0a2e 100%)' }}
                     >
                         {/* Animated glow border */}
