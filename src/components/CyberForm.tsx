@@ -46,7 +46,7 @@ const QUESTIONS: {
         { id: 'contact', label: '> CANAL DE COMUNICAÇÃO: Email ou WhatsApp para contato?', placeholder: 'email@exemplo.com ou (42) 99999-9999', type: 'text' },
         {
             id: 'scope', label: '> ANALISANDO ESCOPO: O que será desenvolvido?', placeholder: '', type: 'select',
-            options: ['Site Institucional', 'Aplicativo Mobile', 'Sistema Web / SaaS', 'Integração com IA', 'E-commerce', 'Consultoria Técnica']
+            options: ['Site Institucional', 'Aplicativo Mobile', 'Sistema Web / SaaS', 'Integração com IA', 'E-commerce', 'Consultoria Técnica', 'Outros']
         },
         {
             id: 'deadline', label: '> CALIBRANDO PRAZO: Qual o horizonte de entrega?', placeholder: '', type: 'select',
