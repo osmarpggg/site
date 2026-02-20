@@ -67,7 +67,7 @@ const Hero: React.FC<HeroProps> = ({ onOpenCyberForm }) => {
                             size="lg"
                             icon={<ArrowRight className="w-4 h-4" />}
                         >
-                            Iniciar Projeto
+                            Solicitar projeto
                         </Button>
                         <Button
                             onClick={() => setIsModalOpen(true)}

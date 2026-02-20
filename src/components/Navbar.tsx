@@ -61,7 +61,7 @@ const Navbar: React.FC<NavbarProps> = ({ onOpenCyberForm }) => {
                         variant="primary"
                         icon={<Play className="w-3 h-3 fill-current" />}
                     >
-                        Iniciar Projeto
+                        Solicitar projeto
                     </Button>
                 </div>
 
@@ -99,7 +99,7 @@ const Navbar: React.FC<NavbarProps> = ({ onOpenCyberForm }) => {
                                     onClick={() => { onOpenCyberForm(); setIsOpen(false); }}
                                     className="w-full justify-center"
                                 >
-                                    Iniciar Projeto
+                                    Solicitar projeto
                                 </Button>
                             </div>
                         </div>
