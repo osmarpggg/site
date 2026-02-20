@@ -163,10 +163,9 @@ const CyberForm: React.FC<CyberFormProps> = ({ isOpen, onClose }) => {
     const handleSubmit = async () => {
         dispatch({ type: 'SENDING' });
         try {
-            // NOTE: Replace with your real EmailJS credentials
             await emailjs.send(
-                'service_stalflow',      // ← your EmailJS service ID
-                'template_stalflow',     // ← your EmailJS template ID
+                'service_mtvfq97',      // ← your EmailJS service ID
+                'template_exfgt85',     // ← your EmailJS template ID
                 {
                     to_email: 'juniorpg1904@gmail.com',
                     project_name: state.answers.projectName,
@@ -177,7 +176,7 @@ const CyberForm: React.FC<CyberFormProps> = ({ isOpen, onClose }) => {
                     budget: state.answers.budget,
                     submitted_at: new Date().toLocaleString('pt-BR'),
                 },
-                'YOUR_EMAILJS_PUBLIC_KEY' // ← your EmailJS public key
+                'NzGkNr17bm6EuVUes' // ← your EmailJS public key
             );
             dispatch({ type: 'SUCCESS' });
         } catch {
